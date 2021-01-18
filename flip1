@@ -1,0 +1,47 @@
+
+
+class Solution:
+    def smallestnum (self,N):
+        # code here 
+        l=[]
+        for i in N:
+            l.append(int(i))
+        l.sort()
+        m=[]
+        c=l.count(0)
+        d=0
+        e=l
+        if(c==0):
+            d=d+1
+        else:
+            for i in range(c):
+                l.remove(0)
+        f=str(l[0])
+        if(c==0):
+            d=d+1
+        else:
+            for i in range(c):
+                f=f+"0"
+        l.remove(l[0])
+        for i in l:
+            f=f+str(i)
+        return(f)
+        
+
+
+
+
+#{ 
+#  Driver Code Starts
+#Initial Template for Python 3
+
+
+if __name__ == '__main__': 
+    t = int (input ())
+    for _ in range (t):
+        N = input()
+        ob = Solution()
+        ans = ob.smallestnum(N)
+        print(ans)
+
+# } Driver Code Ends
